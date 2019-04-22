@@ -23,18 +23,9 @@ public class PressurePad : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
-       
-
       
         {
-            StartCoroutine(break_blocker());
-           
-             
-            
-
-            
-          
+            StartCoroutine(break_blocker());          
         }
     }
 

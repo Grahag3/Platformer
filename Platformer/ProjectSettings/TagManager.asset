@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - Blocker
+  - Enemy
+  - Jumppad
   layers:
   - Default
   - TransparentFX
@@ -15,9 +17,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Trigger
+  - Player
+  - Stopper
   - 
   - 
   - 
