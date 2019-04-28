@@ -470,7 +470,7 @@ GameObject:
   - component: {fileID: 1128054850}
   - component: {fileID: 1128054853}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Try Again
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -612,7 +612,7 @@ GameObject:
   - component: {fileID: 1246270646}
   - component: {fileID: 1246270645}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: Quit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -810,7 +810,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Try Again
+  m_Text: Try Again (R)
 --- !u!222 &1386887422
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -833,7 +833,7 @@ GameObject:
   - component: {fileID: 1737856848}
   - component: {fileID: 1737856847}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Settings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -21,16 +21,23 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     
+
+        GetComponent<Animator>().SetBool("running", false);
+        
+
         if (Input.GetKey(KeyCode.D) == true)
         {
             transform.position += Vector3.right * speed;
+            GetComponent<Animator>().SetBool("running", true);
+            GetComponent<SpriteRenderer>().flipX = false;
         }
 
         if (Input.GetKey(KeyCode.A) == true)
         {
             transform.position += -Vector3.right * speed;
-            
+            GetComponent<Animator>().SetBool("running", true);
+            GetComponent<SpriteRenderer>().flipX = true;
+
         }
         if (Input.GetKeyDown(KeyCode.Space) == true && can_jump && !just_jumped)
         {
@@ -39,14 +46,22 @@ public class Player : MonoBehaviour
             just_jumped = true;
             jump_force = original_jump;
 
+            GetComponent<Animator>().SetBool("jumping", true);
+
+
             StartCoroutine(jumped());
+
+
         }
+
+        
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Jumppad" && jump_force < original_jump * 2)
         {
             can_jump = true;
+            
             jump_force *= 2;
         }
     }
@@ -56,10 +71,14 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Jumppad")
         {
             can_jump = true;
-        } else
+            //GetComponent<Animator>().SetBool("falling", false);
+        }
+
+        else
         {
             can_jump = false;
         }
+
 
         if (collision.gameObject.tag == "Enemy")
         {
@@ -76,5 +95,8 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(0.9f);
         just_jumped = false;
+
+        GetComponent<Animator>().SetBool("jumping", false);
+        //GetComponent<Animator>().SetBool("falling", true);
     }
 }

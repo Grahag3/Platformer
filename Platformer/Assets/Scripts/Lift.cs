@@ -20,10 +20,7 @@ public class Lift : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Blocker")
-        {
-            lift_power = 0;
-        }
+       
 
         if (collision.gameObject.tag == "Player")
         {
@@ -31,8 +28,11 @@ public class Lift : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.tag == "Blocker")
+        {
+            lift_power = 0;
+        }
     }
 }
