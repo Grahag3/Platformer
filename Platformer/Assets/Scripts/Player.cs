@@ -42,6 +42,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) == true && can_jump && !just_jumped)
         {
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jump_force), ForceMode2D.Impulse);
+            Sounds.play_sound("Jump");
             can_jump = false;
             just_jumped = true;
             jump_force = original_jump;
@@ -84,6 +85,8 @@ public class Player : MonoBehaviour
         {
             //Destroy(collision.gameObject);
             //Destroy(this.gameObject);
+
+            Sounds.play_sound("Death");
 
             SceneManager.LoadScene("End");
 

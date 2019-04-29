@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Jumppad
   - Blocker 2
+  - Audio
   layers:
   - Default
   - TransparentFX

@@ -25,7 +25,9 @@ public class Lift : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             transform.position += lift_power * Vector3.up;
+            
         }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

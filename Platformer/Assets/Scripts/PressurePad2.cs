@@ -22,6 +22,7 @@ public class PressurePad2 : MonoBehaviour
 
         {
             StartCoroutine(break_blocker());
+            Sounds.play_sound("Press");
         }
     }
 
