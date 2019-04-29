@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Settings : MonoBehaviour
+public class HighScores : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -17,13 +17,10 @@ public class Settings : MonoBehaviour
         
     }
 
-    public void menu()
-    {
-        SceneManager.LoadScene("Intro");
-    }
-
     public void back()
     {
         SceneManager.LoadScene(PlayerPrefs.GetString("Last_Scene"));
+        PlayerPrefs.SetString("Last_Scene", SceneManager.GetActiveScene().name);
+
     }
 }

@@ -24,6 +24,7 @@ public class Intro : MonoBehaviour
 
     public void settings()
     {
+        PlayerPrefs.SetString("Last_Scene", SceneManager.GetActiveScene().name);
         SceneManager.LoadScene("Settings");
     }
 }

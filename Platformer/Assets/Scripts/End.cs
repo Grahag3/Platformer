@@ -27,11 +27,18 @@ public class End : MonoBehaviour
 
     public void settings()
     {
+        PlayerPrefs.SetString("Last_Scene", SceneManager.GetActiveScene().name);
         SceneManager.LoadScene("Settings");
     }
 
     public void quit()
     {
         Application.Quit();
+    }
+
+    public void scores()
+    {
+        PlayerPrefs.SetString("Last_Scene", SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("High Scores");
     }
 }
